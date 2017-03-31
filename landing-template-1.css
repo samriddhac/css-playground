@@ -78,3 +78,11 @@
 		height: 540px;
 	}
 }
+
+.list-location-item {
+	margin: 5px 0px;
+}
+
+.list-location-item:first-child {
+	margin-top: 5px;
+}
