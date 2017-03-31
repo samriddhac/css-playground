@@ -1,24 +1,24 @@
 .nav-no-margin {
-	margin: 0px;
+	margin: 0px !important;
 }
-
 .map-container {
 	position: relative;
 }
-
 #map {
 	position: absolute;
 }
-
 .bg-dusky {
 	background-color: #eee;
 }
-
 .container {
 	padding: 15px;
 	margin: 10px auto;
 }
-
+.search-container {
+	display: flex;
+	flex-direction: row;
+	margin-top: 10px;
+}
 @media (min-width: 300px) {
 	.container {
 		width: 270px;
@@ -28,7 +28,6 @@
 		height: 200px;
 	}
 }
-
 @media (min-width: 500px) {
 	.container {
 		width: 480px;
@@ -38,7 +37,6 @@
 		height: 360px;
 	}
 }
-
 @media (min-width: 768px) {
 	.container {
 		width: 750px;
@@ -48,7 +46,6 @@
 		height: 540px;
 	}
 }
-
 @media (min-width: 992px) {
 	.container {
 		width: 978px;
@@ -58,7 +55,6 @@
 		height: 480px;
 	}
 }
-
 @media (min-width: 1200px) {
 	.container {
 		width: 1170px;
@@ -68,7 +64,6 @@
 		height: 480px;
 	}
 }
-
 @media (min-width: 1350px) {
 	.container {
 		width: 1320px;
@@ -78,11 +73,80 @@
 		height: 540px;
 	}
 }
-
+.text-input-search {
+	width: auto;
+	vertical-align: middle;
+	margin-right: 5px;
+}
 .list-location-item {
 	margin: 5px 0px;
+	box-shadow: 10px 10px 5px #888888;
+	padding-bottom: 0px;
 }
-
+.list-location-item:hover {
+	box-shadow: 0px 0px 0px #fff;
+}
 .list-location-item:first-child {
-	margin-top: 5px;
+	margin-top: 10px;
+}
+.list-location-child-item {
+	padding: 2px 6px;
+}
+.list-location-child-item:first-child {
+	padding-left: 0px;
+}
+.list-location-child-item:last-child {
+	padding-right: 0px;
+}
+.list-item-weather-container {
+	display: inline-block;
+	width: 100%;
+	margin-right: 0px;
+	margin-bottom: 3px;
+	position: relative;
+}
+.weather-component {
+	margin: 3px 0px 0px 4px;
+	padding: 3px 0px 0px 0px;
+}
+.go-to-button {
+	margin-top: 30px;
+	margin-bottom: 0px;
+	padding: 3px;
+}
+.pull-inline {
+	display: inline-flex;
+}
+.pull-right {
+	float: right;
+}
+.pull-left {
+	float: left;
+}
+.rounded-border {
+	border-radius: 10px !important;
+}
+.bold-italic-font {
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-style: italic;
+	font-weight: bold;
+}
+.light-italic-font {
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-style: italic;
+}
+.font-color-blue {
+	color: blue;
+}
+.font-color-shady {
+	color: #afa496;
+}
+.font-size-large {
+	font-size: 24px;
+}
+.font-size-medium {
+	font-size: 16px;
+}
+.font-size-small {
+	font-size: 12px;
 }
