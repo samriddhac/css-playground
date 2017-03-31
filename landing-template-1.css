@@ -1,12 +1,13 @@
+.nav-no-margin {
+	margin: 0px;
+}
+
 .map-container {
 	position: relative;
-	min-height: 300px;
-	min-width: 300px;
 }
 
 #map {
-	width: 100%;
-	height: 100%;
+	position: absolute;
 }
 
 .bg-dusky {
@@ -18,9 +19,23 @@
 	margin: 10px auto;
 }
 
-@media (min-width: 500) {
+@media (min-width: 300px) {
+	.container {
+		width: 270px;
+	}
+	#map {
+		width: 240px;
+		height: 200px;
+	}
+}
+
+@media (min-width: 500px) {
 	.container {
 		width: 480px;
+	}
+	#map {
+		width: 420px;
+		height: 360px;
 	}
 }
 
@@ -28,11 +43,19 @@
 	.container {
 		width: 750px;
 	}
+	#map {
+		width: 600px;
+		height: 540px;
+	}
 }
 
 @media (min-width: 992px) {
 	.container {
 		width: 978px;
+	}
+	#map {
+		width: 680px;
+		height: 480px;
 	}
 }
 
@@ -40,10 +63,18 @@
 	.container {
 		width: 1170px;
 	}
+	#map {
+		width: 800px;
+		height: 480px;
+	}
 }
 
 @media (min-width: 1350px) {
 	.container {
 		width: 1320px;
+	}
+	#map {
+		width: 840px;
+		height: 540px;
 	}
 }
