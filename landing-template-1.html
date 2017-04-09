@@ -36,7 +36,95 @@
 			</ul>
 			<div class="tab-content">
 			  <div id="feed" class="tab-pane fade in active">
-			    <ul class="list-group bg-dusky">
+			    <ul class="list-group bg-dusky list-location-container">
+				  <li class="list-group-item list-location-item rounded-border">
+				  	<div>
+				  		<div>
+				  			<span class="bold-italic-font font-size-small font-color-blue list-location-child-item">City : New York</span>
+				  			<span class="bold-italic-font font-size-small font-color-blue list-location-child-item">Country : United States</span>
+				  			<span class="light-italic-font font-size-small font-color-shady list-location-child-item pull-right">07:34:00AM</span>
+				  		</div>
+				  		<div class="list-item-weather-container">
+				  			<div class="pull-inline weather-component">
+				  				<img src="./icons/m-cloudy.gif"/>
+				  				<div>
+				  					<div class="light-italic-font font-size-small font-color-shady">Max temp: 29F</div>
+				  					<div class="light-italic-font font-size-small font-color-shady">Min temp: 29F</div>
+				  					<div class="light-italic-font font-size-small font-color-shady">Humidity: 34%</div>
+				  				</div>
+				  			</div>
+				  			<div class="go-to-button pull-right">
+				  				<a class="btn btn-success btn-xs" href="">Go to this place</a>
+				  			</div>
+				  		</div>
+				  	</div>
+				  </li>
+				  <li class="list-group-item list-location-item rounded-border">
+				  	<div>
+				  		<div>
+				  			<span class="bold-italic-font font-size-small font-color-blue list-location-child-item">City : New York</span>
+				  			<span class="bold-italic-font font-size-small font-color-blue list-location-child-item">Country : United States</span>
+				  			<span class="light-italic-font font-size-small font-color-shady list-location-child-item pull-right">07:34:00AM</span>
+				  		</div>
+				  		<div class="list-item-weather-container">
+				  			<div class="pull-inline weather-component">
+				  				<img src="./icons/m-cloudy.gif"/>
+				  				<div>
+				  					<div class="light-italic-font font-size-small font-color-shady">Max temp: 29F</div>
+				  					<div class="light-italic-font font-size-small font-color-shady">Min temp: 29F</div>
+				  					<div class="light-italic-font font-size-small font-color-shady">Humidity: 34%</div>
+				  				</div>
+				  			</div>
+				  			<div class="go-to-button pull-right">
+				  				<a class="btn btn-success btn-xs" href="">Go to this place</a>
+				  			</div>
+				  		</div>
+				  	</div>
+				  </li>
+				  <li class="list-group-item list-location-item rounded-border">
+				  	<div>
+				  		<div>
+				  			<span class="bold-italic-font font-size-small font-color-blue list-location-child-item">City : New York</span>
+				  			<span class="bold-italic-font font-size-small font-color-blue list-location-child-item">Country : United States</span>
+				  			<span class="light-italic-font font-size-small font-color-shady list-location-child-item pull-right">07:34:00AM</span>
+				  		</div>
+				  		<div class="list-item-weather-container">
+				  			<div class="pull-inline weather-component">
+				  				<img src="./icons/m-cloudy.gif"/>
+				  				<div>
+				  					<div class="light-italic-font font-size-small font-color-shady">Max temp: 29F</div>
+				  					<div class="light-italic-font font-size-small font-color-shady">Min temp: 29F</div>
+				  					<div class="light-italic-font font-size-small font-color-shady">Humidity: 34%</div>
+				  				</div>
+				  			</div>
+				  			<div class="go-to-button pull-right">
+				  				<a class="btn btn-success btn-xs" href="">Go to this place</a>
+				  			</div>
+				  		</div>
+				  	</div>
+				  </li>
+				  <li class="list-group-item list-location-item rounded-border">
+				  	<div>
+				  		<div>
+				  			<span class="bold-italic-font font-size-small font-color-blue list-location-child-item">City : New York</span>
+				  			<span class="bold-italic-font font-size-small font-color-blue list-location-child-item">Country : United States</span>
+				  			<span class="light-italic-font font-size-small font-color-shady list-location-child-item pull-right">07:34:00AM</span>
+				  		</div>
+				  		<div class="list-item-weather-container">
+				  			<div class="pull-inline weather-component">
+				  				<img src="./icons/m-cloudy.gif"/>
+				  				<div>
+				  					<div class="light-italic-font font-size-small font-color-shady">Max temp: 29F</div>
+				  					<div class="light-italic-font font-size-small font-color-shady">Min temp: 29F</div>
+				  					<div class="light-italic-font font-size-small font-color-shady">Humidity: 34%</div>
+				  				</div>
+				  			</div>
+				  			<div class="go-to-button pull-right">
+				  				<a class="btn btn-success btn-xs" href="">Go to this place</a>
+				  			</div>
+				  		</div>
+				  	</div>
+				  </li>
 				  <li class="list-group-item list-location-item rounded-border">
 				  	<div>
 				  		<div>
@@ -263,12 +351,26 @@
 </div>
 <script>
   function initMap() {
-    // Create a map object and specify the DOM element for display.
-    var map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: -34.397, lng: 150.644},
+  	var centercoord = { lat: -34.397, lng: 150.644 };
+  	if(navigator && navigator.geolocation) {
+  		navigator.geolocation.getCurrentPosition((position) => {
+			centercoord.lat = position.coords.latitude;
+			centercoord.lng = position.coords.longitude;
+			renderMap(centercoord);
+		});
+	}
+	else {
+		renderMap(centercoord);
+	}
+  }
+
+  function renderMap(centercoord) {
+  	console.log('centercoord '+JSON.stringify(centercoord));
+  	var map = new google.maps.Map(document.getElementById('map'), {
+      center: centercoord,
       scrollwheel: false,
       mapTypeId: google.maps.MapTypeId.HYBRID,
-      zoom: 8
+      zoom: 14
     });
   }
 
